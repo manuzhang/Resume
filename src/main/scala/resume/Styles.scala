@@ -4,8 +4,6 @@ import scalatags.Text.all._
 import scalatags.stylesheet._
 
 object Styles{
-  val flexDirection = "flex-direction".style
-  val flexGrow = "flex-grow".style
   val cssReset =
     """
       |/* http://meyerweb.com/eric/tools/css/reset/
