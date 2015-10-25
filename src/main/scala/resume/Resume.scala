@@ -145,7 +145,7 @@ object Resume{
               ),
               p(para,
                 "I am not the author of the original Scala.js project (that's Sebastien Doraene)",
-                ", but I can confidently say it would exist as it does today without my help."
+                ", but I can confidently say it would not exist as it does today without my help."
               )
             ),
             titledBlock(
