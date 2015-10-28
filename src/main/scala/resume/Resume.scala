@@ -13,7 +13,7 @@ object Resume{
   }
   def main(args: Array[String]) = {
 
-    def autolink(url: String) = a(url, href:=url)
+    def autolink(url: String) = a(url.stripPrefix("https://").stripPrefix("http://"), href:=url)
     def row = div(display.flex, flexDirection := "row")
     def col = div(display.flex, flexDirection := "column")
     def titledBlock(title: String, loc: String, bullets: Frag*) = div(
@@ -66,7 +66,7 @@ object Resume{
               div(
                 textAlign.right,
                 greyText,
-                a("http://www.github.com/lihaoyi", href:="http://www.github.com/lihaoyi")
+                autolink("http://www.github.com/lihaoyi")
               )
             )
           )
@@ -90,9 +90,14 @@ object Resume{
                 monitoring, and automatic quarantine, we reduced the number of builds
                 failing due to flaky tests from ~10% to <1%
                 """,
-                """Helped manage our CI system comprising >3000 CI machines; performing
+                """
+                Helped manage our CI system comprising >3000 CI machines; performing
                 on-call duties, manual scaling up/down, cluster-wide distributed
                 trouble-shooting and recovery
+                """,
+                """
+                Mentored an intern into completing a successful project (test
+                quarantine) in the 12 weeks he was here, earning him a return offer.
                 """
               ),
               titledBlock(
@@ -113,8 +118,9 @@ object Resume{
                 """
                 Designed and implemented an auto-packager, which uses machine
                 learning on a historical sample of page-views to optimize bundling
-                Javascript modules together for download. reduced
-                the number of files loaded on the home page from ~250 to ~50
+                Javascript modules together for download. Reduced
+                the number of files loaded on the home page from ~250 to ~50, cutting
+                international page-load latency by several seconds.
                 """
               ),
               titledBlock(
@@ -137,7 +143,7 @@ object Resume{
             titledBlock(
               "Core Contributor", "Sep 2013 - Present",
               p(para,
-                "Scala.js (", autolink("http://www.scala-js.org/"), ") is a compiler that ",
+                "Scala.js (", autolink("http://www.scala-js.org"), ") is a compiler that ",
                 "converts Scala code into equivalent, executable Javascript. It allows you ",
                 "to write websites in an expressive, type-safe language and share code between ",
                 "client and server. Scala.js has thousands of people ",
@@ -156,7 +162,7 @@ object Resume{
                 autolink("https://lihaoyi.github.io/roll")
               ),
               """
-              Pushed for several usability improvements that helped make Scala.js actually
+              Pushed for usability improvements that made Scala.js actually
               usable (edit-refresh speed, debuggability, etc.)
               """,
               "Contributed a dozen commits and many more bug-reports in the process."
@@ -198,25 +204,6 @@ object Resume{
             )
           )
         ),
-        section("Buzzwords",
-          div(listBlock,
-            table(
-              quickBullet(
-                "Programming Languages",
-                "Scala, Python, Coffeescript, Javascript, CSS, Java, C#, F#, PHP, Ruby"
-              ),
-              quickBullet(
-                "Frameworks",
-                "Flask, React.js, Underscore.js, jQuery, Play, Spray"
-              ),
-              quickBullet(
-                "Areas of Interest",
-                "Compilers, FRP, Parser Combinators, Sandboxing, Web Dev, Game Dev"
-              )
-            )
-          )
-        ),
-        tr(td(colspan := 2, div(scalatags.Text.styles2.pageBreakAfter.always))),
         section(
           "Ancient History",
           col(
@@ -283,25 +270,28 @@ object Resume{
               titledBlock(
                 "Ammonite", "Jan 2015 - Present",
                 """
-              Ammonite explores the possibilities of writing a system-shell that uses a
-              modern, type-safe, high-level language
+                Ammonite explores the possibilities of writing a system-shell that uses a
+                modern, type-safe, high-level language
+                """,
+                """
+                Mentored a GSOC student May-Aug 2015, who made improvements to
+                script loading and compilation-caching
                 """,
                 autolink("https://github.com/lihaoyi/Ammonite")
               ),
               titledBlock(
                 "MacroPy", "Apr 2013 - Aug 2013",
                 """
-              What if syntactic macros were available in a language like Python
-              instead of weird obscure ones like MIT-Scheme?
+                What if syntactic macros were available in a language like Python
+                instead of weird obscure ones like MIT-Scheme?
                 """,
                 autolink("https://github.com/lihaoyi/macropy")
               ),
               titledBlock(
                 "Scala.Rx", "Dec 2012 - Aug 2014",
                 """
-              A FRP library that provides automatic change-propagation in any Scala
-              application.
-              their sources
+                A FRP library that provides automatic change-propagation in any Scala
+                application.
                 """,
                 autolink("https://github.com/lihaoyi/scala.rx")
               ),
@@ -317,6 +307,12 @@ object Resume{
             div(
               marginTop := 20,
               row(h2(sectionHeading, "Talks"), logo("GoogleSlides.png")),
+              div(listBlock,
+                p(para, """
+                  Presentations I've given: at meetup groups,
+                  industry conferences and academic workshops. Stay a while and listen!
+                """)
+              ),
               talk(
                 "Metascala: a tiny DIY JVM",
                 "Scala Exchange 2 Dec 2013",
@@ -329,12 +325,12 @@ object Resume{
               ),
               talk(
                 "Fun Functional-Reactive Programming with Scala.Rx",
-                "Scaladays 17 June 2014",
+                "Scaladays 17 Jun 2014",
                 "https://vimeo.com/98477272"
               ),
               talk(
                 "Cross-platform development with Scala.js",
-                "Scala by the Bay 9 August 2014",
+                "Scala by the Bay 9 Aug 2014",
                 "https://www.youtube.com/watch?v=Ksoi6AG9nbA"
               ),
               talk(
@@ -349,18 +345,33 @@ object Resume{
               ),
               talk(
                 "Scala.js - Safety & Sanity in the wild west of the web",
-                "PhillyETE 8 March 2015",
+                "PhillyETE 8 Mar 2015",
                 "https://vimeo.com/124702603"
               ),
               talk(
                 "Why (You might like) Scala.js",
-                "Scaladays 17 March 2015",
+                "Scaladays 17 Mar 2015",
                 "https://vimeo.com/122611959"
               ),
               talk(
                 "Beyond Bash",
-                "Scala by the Bay 12 August 2015",
-                "Video not yet published"
+                "Scala by the Bay 12 Aug 2015",
+                "https://www.youtube.com/watch?v=dP5tkmWAhjg"
+              ),
+              talk(
+                "FastParse:  Fast, Modern Parser Combinators",
+                "SF Scala Meetup 13 Oct 2015",
+                "https://vimeo.com/142341803"
+              ),
+              talk(
+                "Fast, Modern, OO Parser Combinators",
+                "Parsing@SLE, SPLASH 24 Oct 2015",
+                "https://vimeo.com/143572750"
+              ),
+              talk(
+                "Shell-scripting in a Typed, OO Language",
+                "New Object Oriented Languages, SPLASH 28 Oct 2015",
+                "https://vimeo.com/143819744"
               )
 
             )

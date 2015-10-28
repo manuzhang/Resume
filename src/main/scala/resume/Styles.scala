@@ -85,6 +85,7 @@ trait Styles extends StyleSheet{
   )
   def para = cls(
     fontSize := 12,
+    textAlign.justify,
     marginTop := 3,
     marginBottom := 3
   )
