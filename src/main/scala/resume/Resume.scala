@@ -21,10 +21,11 @@ object Resume{
         h3(roleText, title),
         div(rightGreyText, loc)
       ),
-      ul(
-        listBlock,
-        bullets.map(li(listItem, _))
-      )
+      bulletList(bullets:_*)
+    )
+    def bulletList(bullets: Frag*) = ul(
+      listBlock,
+      bullets.map(li(listItem, _))
     )
     def quickBullet(lhs: String, rhs: String) = tr(
       td(div(para, roleText, paddingRight := 5, lhs)),
@@ -96,8 +97,8 @@ object Resume{
                 trouble-shooting and recovery
                 """,
                 """
-                Mentored an intern into completing a successful project (test
-                quarantine) in the 12 weeks he was here, earning him a return offer.
+                Mentored an intern completing a successful project (test
+                quarantine) in his 12 weeks here, getting a return offer.
                 """
               ),
               titledBlock(
@@ -112,13 +113,12 @@ object Resume{
                 em' build system to Require.js modules
                 """,
                 """
-                Implemented static analysis tooling to enforce conventions in Python and
+                Built static analysis tools to enforce conventions in Python and
                 Coffeescript, allowing fast refactoring without fear
                 """,
                 """
-                Designed and implemented an auto-packager, which uses machine
-                learning on a historical sample of page-views to optimize bundling
-                Javascript modules together for download. Reduced
+                Built an auto-packager, which uses machine
+                learning to bundle Javascript for faster download. Reduced
                 the number of files loaded on the home page from ~250 to ~50, cutting
                 international page-load latency by several seconds.
                 """
@@ -146,7 +146,10 @@ object Resume{
                 "Scala.js (", autolink("http://www.scala-js.org"), ") is a compiler that ",
                 "converts Scala code into equivalent, executable Javascript. It allows you ",
                 "to write websites in an expressive, type-safe language and share code between ",
-                "client and server. Scala.js has thousands of people ",
+                "client and server. "
+              ),
+              p(para,
+                "Scala.js has thousands of people ",
                 "using it for real work, and a healthy ecosystem of open-source libraries."
               ),
               p(para,
@@ -201,6 +204,53 @@ object Resume{
                 "repository, and every Scala.js project in existence uses some of them. See ",
                 autolink("https://github.com/lihaoyi"), " to find out more."
               )
+            )
+          )
+        ),
+        section(
+          "Buzzwords",
+          h3(roleText,
+            bulletList(
+              Seq(
+                "Scala",
+                "Python",
+                "Coffeescript",
+                "Javascript",
+                "Java",
+                "C#",
+                "Bash",
+                "Ruby",
+                "SQL",
+                "F#",
+                "PHP"
+              ).mkString(" - "),
+              Seq(
+                "React.js",
+                "Flask",
+                "PostgreSQL",
+                "Selenium",
+                "JVM Internals",
+                "Amazon Web Services",
+                "IntelliJ",
+                "Ubuntu"
+              ).mkString(" - "),
+              Seq(
+                "Static Analysis",
+                "Compilers",
+                "REPLs",
+                "Parser Combinators",
+                "Syntactic Macros",
+                "FRP"
+              ).mkString(" - "),
+              Seq(
+                "Web Dev",
+                "Algorithms",
+                "Performance",
+                "3D Graphics",
+                "3D Physics",
+                "Control Systems",
+                "Sandboxing"
+              ).mkString(" - ")
             )
           )
         ),
