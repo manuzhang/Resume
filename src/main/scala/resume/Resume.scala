@@ -91,7 +91,7 @@ object Resume{
                 "Software Engineer, Intel Hadoop Distribution", "July 2014 - Jan 2015",
                 """
                 Carried out benchmark on Apache Storm and developed storm-benchmark,
-                a suite of benchmarks test Apache Storm performance.
+                a suite of benchmarks to test Apache Storm performance.
                 """
               ),
               titledBlock(
