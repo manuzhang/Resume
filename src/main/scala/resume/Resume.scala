@@ -11,6 +11,7 @@ object Resume{
       read.bytes! filepath
     )
   }
+
   def main(args: Array[String]) = {
 
     def autolink(url: String) = a(url.stripPrefix("https://").stripPrefix("http://"), href:=url)
@@ -96,12 +97,12 @@ object Resume{
               titledBlock(
                 "Software Engineer, Intel Hadoop Distribution", "July 2013 - July 2014",
                 """
-                Contributed to mapreduce-nativetask, which boosted mapreduce performance up to 30%,
+                Contributed to mapreduce-nativetask, which boosted MapReduce performance up to 30%,
                 and was merged into Hadoop trunk.
                 """
               ),
             titledBlock(
-                "Intel , Intel Hadoop Distribution", "Jan 2013 - July 2013",
+                "Intern , Intel Hadoop Distribution", "Jan 2013 - July 2013",
                 """
                 Carried out benchmark on a message queue built on Apache HBase
                 """
