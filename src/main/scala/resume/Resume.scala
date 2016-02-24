@@ -148,7 +148,7 @@ object Resume{
           col(
             div(
               row(
-                h2(sectionHeading, "Each China Normal University"),
+                h2(sectionHeading, "East China Normal University"),
                 // Override height to compensate for non-square image
                 logo("ECNU.png")(height := 12, paddingTop := 4),
                 div(rightGreyText, "Shanghai")
@@ -179,7 +179,7 @@ object Resume{
               titledBlock(
                 "storm-benchmark",
                 """
-                a suite of benchmarks to test peformance of Apache Storm
+                a suite of benchmarks to test performance of Apache Storm
                 """,
                 autolink("https://github.com/intel-hadoop/storm-benchmark")
               ),
