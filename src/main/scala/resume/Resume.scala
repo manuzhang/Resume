@@ -19,8 +19,8 @@ object Resume{
     def col = div(display.flex, flexDirection := "column")
     def titledBlock(title: String, loc: String, bullets: Frag*) = div(
       row(
-        h3(roleText, title),
-        div(rightGreyText, loc)
+        h3(roleText, title, paddingTop := 10),
+        div(rightGreyText, loc, paddingTop := 5, paddingBottom := 5)
       ),
       bulletList(bullets:_*)
     )
@@ -60,51 +60,92 @@ object Resume{
           width := "100%",
             div(
               width := "50%",
-              h1(nameText, "Zhang Tianlun")
-            ),
-            col(
-              width := "50%",
-              div(textAlign.right, greyText, "owenzhang1990@gmail.com"),
-              div(
-                textAlign.right,
-                greyText,
-                autolink("http://www.github.com/manuzhang")
-              )
+              h1(nameText, "张天伦"),
+              paddingBottom := 5
             )
           )
         ),
+      row(
+        width := "100%",
+        col(
+          width := "50%",
+          div(
+            textAlign.left,
+            greyText,
+            autolink("http://www.github.com/manuzhang"),
+            paddingBottom := 2
+          ),
+          div(
+            textAlign.left,
+            greyText,
+            autolink("http://manuzhang.github.io")
+          )
+        ),
+        col(
+          width := "50%",
+          div(textAlign.right, greyText, "owenzhang1990@gmail.com", paddingBottom := 2),
+          div(textAlign.right, greyText, "15921814184")
+        )
+      ),
+
         hr,
         table(
           width := "100%",
           section(
-            "Work",
+            "工作经历",
             col(
-              row(h2(sectionHeading, "Intel"), logo("Intel.png"), div(rightGreyText, "Shanghai")),
+              row(h2(sectionHeading, "英特尔"), logo("Intel.png"), div(rightGreyText, "上海")),
+
               titledBlock(
-                "Software Engineer, Gearpump", "Jan 2015 - Present",
+                "软件工程师，大数据流处理", "2014年7月至今",
                 """
-                Core committer to Gearpump, a real-time Big Data engine on Akka.
-                Developed Kafka connectors, Storm compatibility layer and transaction APIs.
+                   开发基于 Akka 的高性能流处理引擎 Gearpump，实现 Apache Kafka 的连接器，Apache Storm 的透明兼容层，
+                   Exactly-Once 语义，和 Apache Beam 的集成等。Gearpump 已经成为 Apache 基金会孵化项目。
+                """,
+                autolink("https://github.com/apache/incubator-gearpump")
+              ),
+              titledBlock(
+                "软件工程师，大数据流处理", "2016年12月至今",
+                """
+                   支持客户基于 Apache Flink 开发调试流处理应用，与社区沟通，反馈 Bug，贡献源码。
                 """
               ),
               titledBlock(
-                "Software Engineer, Intel Hadoop Distribution", "July 2014 - Jan 2015",
+                "软件工程师，大数据流处理", "2016年7月 - 2016年8月",
                 """
-                Carried out benchmark on Apache Storm and developed storm-benchmark,
-                a suite of benchmarks to test Apache Storm performance.
+                   开发 HiBench 的流处理模块，对 Apache Spark Streaming, Apache Storm, Apache Flink 和
+                   Apache Gearpump(incubating) 四个框架进行功能比较和性能测评。
+                """,
+                autolink("https://github.com/intel-hadoop/HiBench")
+              ),
+              titledBlock(
+                "软件工程师, 大数据流处理", "2014年7月 - 2015年1月",
+                """
+                   开发性能测评工具 storm-benchmark，对 Apache Storm 进行性能测评。
+                """,
+                autolink("https://github.com/intel-hadoop/storm-benchmark")
+              ),
+              titledBlock(
+                "软件工程师，英特尔 Hadoop 发行版", "2013年7月 - 2014年7月",
+                """
+                   开发 Apache Hadoop MapReduce Nativetask, 实现了对 Apache Pig 的支持和 Apache Hadoop 2.0 版的升级。
+                   使用 HiBench 对其进行性能测评，对比原生的 MapReduce 有 30% 的性能提升。
+                   该模块将于 Hadoop 3.0 版发布。
+                """,
+                """
+                   基于 NTP 协议实现集群的时间同步。
                 """
               ),
               titledBlock(
-                "Software Engineer, Intel Hadoop Distribution", "July 2013 - July 2014",
+                "软件工程师实习，英特尔 Hadoop 发行版", "2013年1月 - 2013年7月",
                 """
-                Contributed to mapreduce-nativetask, which boosted MapReduce performance up to 30%,
-                and was merged into Hadoop trunk.
+                   对一个基于 Apache HBase 实现的消息队列的性能测评
                 """
               ),
-            titledBlock(
-                "Intern , Intel Hadoop Distribution", "Jan 2013 - July 2013",
+              titledBlock(
+                "华东师范大学海量计算研究所实习", "2013年7月 - 2013年12月",
                 """
-                Carried out benchmark on a message queue built on Apache HBase
+                   调研 Apache Cassandra 分布式数据库。
                 """
               )
             )
@@ -117,17 +158,20 @@ object Resume{
                 "Scala",
                 "Java",
                 "C/C++",
-                "JavaScript",
+                "Python",
+                "JavaScript (AngularJS 1)",
+                "Haskell",
                 "Shell",
-                "SQL",
-                "Haskell"
+                "SQL"
               ).mkString(" - "),
               Seq(
-                "Storm",
+                "Apache Storm",
+                "Apache Flink",
+                "Apache Beam",
+                "Apache Kafka",
                 "Akka",
-                "Kafka",
-                "Hadoop",
-                "Cassandra"
+                "Apache Hadoop",
+                "Apache Cassandra"
               ).mkString(" - "),
               Seq(
                 "Docker",
@@ -144,51 +188,45 @@ object Resume{
           )
         ),
         section(
-          "Education",
+          "教育经历",
           col(
             div(
               row(
-                h2(sectionHeading, "East China Normal University"),
+                h2(sectionHeading, "华东师范大学"),
                 // Override height to compensate for non-square image
                 logo("ECNU.png")(height := 12, paddingTop := 4),
-                div(rightGreyText, "Shanghai")
+                div(rightGreyText, "上海")
               ),
               titledBlock(
-                "Undergraduate Software Engineering", "Sep 2009 - July 2013"
+                "软件工程本科", "2009年9月 - 2013年7月"
               )
             )
           )
         ),
         section(
-          "Reference",
+          "社区项目",
           col(
             div(
-              row(h2(sectionHeading, "Projects"), logo("Github.png")),
-             /* div(listBlock,
-                 p(para,
-                  "Other cool projects i've worked on that are worth checking out!"
-                )
-              ), */
+              row(
+                h2(sectionHeading, "awesome-streaming")),
               titledBlock(
-                "Gearpump",
+                "项目维护者", "2014年12月至今",
                 """
-                Gearpump is a real-time Big Data engine on Akka
-                """,
-                autolink("https://github.com/gearpump/gearpump")
-              ),
-              titledBlock(
-                "storm-benchmark",
-                """
-                a suite of benchmarks to test performance of Apache Storm
-                """,
-                autolink("https://github.com/intel-hadoop/storm-benchmark")
-              ),
-              titledBlock(
-                "awesome-streaming",
-                """
-                a curated list of awesome streaming frameworks, applications, etc.
+                   收录了一些有意思的流处理框架，应用和工具。
                 """,
                 autolink("https://github.com/manuzhang/awesome-streaming")
+              ),
+              paddingBottom := 10
+            ),
+            div(
+              row(
+                h2(sectionHeading, "上海大数据流处理 Meetup")),
+              titledBlock(
+                "组织者", "2015年8月至今",
+                """
+                   定期组织聚会沙龙，邀请业界专家揭开流处理技术内幕，分享流处理最佳实践。
+                """,
+                autolink("http://www.meetup.com/Shanghai-Big-Data-Streaming-Meetup/")
               )
             )
           )
