@@ -105,7 +105,13 @@ object Resume{
                 autolink("https://github.com/apache/incubator-gearpump")
               ),
               titledBlock(
-                "软件工程师，大数据流处理", "2016年12月至今",
+                "软件工程师，深度学习", "2017年4月至今",
+                """
+                   开发基于 Apache Hadoop YARN 的深度学习平台 TensorFlowOnYARN，帮助用户使用现有大数据设施运行分布式深度学习算法。
+                """
+              ),
+              titledBlock(
+                "软件工程师，大数据流处理", "2016年12月 - 2017年4月",
                 """
                    支持客户基于 Apache Flink 开发调试流处理应用，与社区沟通，反馈 Bug，贡献源码。
                 """
@@ -151,7 +157,7 @@ object Resume{
             )
         ),
         section(
-          "Skills",
+          "编程技能",
           h3(roleText,
             bulletList(
               Seq(
@@ -165,12 +171,12 @@ object Resume{
                 "SQL"
               ).mkString(" - "),
               Seq(
+                "Apache Beam",
                 "Apache Storm",
                 "Apache Flink",
-                "Apache Beam",
-                "Apache Kafka",
                 "Akka",
                 "Apache Hadoop",
+                "Apache Kafka",
                 "Apache Cassandra"
               ).mkString(" - "),
               Seq(
@@ -212,7 +218,7 @@ object Resume{
               titledBlock(
                 "项目维护者", "2014年12月至今",
                 """
-                   收录了一些有意思的流处理框架，应用和工具。
+                   收录了一些有意思的流处理框架，应用和工具，目前有371颗星。
                 """,
                 autolink("https://github.com/manuzhang/awesome-streaming")
               ),
