@@ -94,10 +94,23 @@ object Resume{
           section(
             "工作经历",
             col(
+              row(h2(sectionHeading, "唯品会"), div(rightGreyText, "上海")),
+
+              titledBlock(
+                "软件工程师，机器学习平台", "2017年8月至今",
+                """
+                   开发基于 Apache Storm 的训练数据准备任务。
+                """,
+
+                """
+                   开发基于 Apache Spark 的图形化机器学习平台，用户可以通过图形拖拽的方式完成机器学习流水线，探查数据分布，检验运行结果。
+                """
+              ),
+
               row(h2(sectionHeading, "英特尔"), logo("Intel.png"), div(rightGreyText, "上海")),
 
               titledBlock(
-                "软件工程师，大数据流处理", "2014年7月至今",
+                "软件工程师，大数据流处理", "2014年7月 - 2017年8月",
                 """
                    开发基于 Akka 的高性能流处理引擎 Gearpump，实现 Apache Kafka 的连接器，Apache Storm 的透明兼容层，
                    Exactly-Once 语义，和 Apache Beam 的集成等。Gearpump 已经成为 Apache 基金会孵化项目。
@@ -105,7 +118,7 @@ object Resume{
                 autolink("https://github.com/apache/incubator-gearpump")
               ),
               titledBlock(
-                "软件工程师，深度学习", "2017年4月至今",
+                "软件工程师，深度学习平台", "2017年4月 - 2017年8月",
                 """
                    开发基于 Apache Hadoop YARN 的深度学习平台 TensorFlowOnYARN，帮助用户使用现有大数据设施运行分布式深度学习算法。
                 """
@@ -136,7 +149,7 @@ object Resume{
                 """
                    开发 Apache Hadoop MapReduce Nativetask, 实现了对 Apache Pig 的支持和 Apache Hadoop 2.0 版的升级。
                    使用 HiBench 对其进行性能测评，对比原生的 MapReduce 有 30% 的性能提升。
-                   该模块将于 Hadoop 3.0 版发布。
+                   该模块在 Hadoop 3.0 版中发布。
                 """,
                 """
                    基于 NTP 协议实现集群的时间同步。
@@ -163,18 +176,19 @@ object Resume{
               Seq(
                 "Scala",
                 "Java",
-                "C/C++",
                 "Python",
+                "C/C++",
                 "JavaScript (AngularJS 1)",
                 "Haskell",
                 "Shell",
                 "SQL"
               ).mkString(" - "),
               Seq(
-                "Apache Beam",
                 "Apache Storm",
-                "Apache Flink",
+                "Apache Spark",
                 "Akka",
+                "Apache Beam",
+                "Apache Flink",
                 "Apache Hadoop",
                 "Apache Kafka",
                 "Apache Cassandra"
@@ -214,11 +228,35 @@ object Resume{
           col(
             div(
               row(
+                h2(sectionHeading, "Apache Gearpump (incubating)")),
+              titledBlock(
+                "Committer（主要维护者）", "2014年7月至今",
+                """
+                   Gearpump 是基于 Akka 的高性能流处理引擎
+                """,
+                autolink("https://github.com/apache/incubator-gearpump")
+              ),
+              paddingBottom := 10
+            ),
+            div(
+              row(
+                h2(sectionHeading, "Apache Beam")),
+              titledBlock(
+                "Committer", "2017年8月至今",
+                """
+                   实现 Gearpump runner，支持 Beam 应用在 Gearpump 引擎上运行。
+                """,
+                autolink("https://github.com/apache/beam")
+              ),
+              paddingBottom := 10
+            ),
+            div(
+              row(
                 h2(sectionHeading, "awesome-streaming")),
               titledBlock(
                 "项目维护者", "2014年12月至今",
                 """
-                   收录了一些有意思的流处理框架，应用和工具，目前有371颗星。
+                   收录了一些有意思的流处理框架，应用和工具，目前有 796 颗星。
                 """,
                 autolink("https://github.com/manuzhang/awesome-streaming")
               ),
