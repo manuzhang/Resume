@@ -79,9 +79,25 @@ object Resume{
           section(
             "Work",
             col(
+              row(h2(sectionHeading, "Vipshop"), div(rightGreyText, "Shanghai")),
+               titledBlock(
+                "Senior Software Engineer, Machine Learning Platform", "Aug 2017 - present",
+                """
+                Developed streaming jobs to prepare real-time data for model training, 
+                which improved freshness of trained models.
+                """,
+                """
+                Built a machine learning platform, an online IDE for data engineers and data scientists
+                to develop machine learning workloads interactively and efficiently. 
+                """,
+                """
+                Developed a drag-and-drop editor where newbies can define a machine learning pipeline without 
+                writing any code and experts can make use of data exploration and visualization to get insights of data and models.
+                """
+              ),
               row(h2(sectionHeading, "Intel"), logo("Intel.png"), div(rightGreyText, "Shanghai")),
               titledBlock(
-                "Software Engineer, Gearpump", "Jan 2015 - Present",
+                "Software Engineer, Gearpump", "Jan 2015 - Aug 2017",
                 """
                 Core committer to Gearpump, a real-time Big Data engine on Akka.
                 Developed Kafka connectors, Storm compatibility layer and transaction APIs.
@@ -101,7 +117,7 @@ object Resume{
                 and was merged into Hadoop trunk.
                 """
               ),
-            titledBlock(
+              titledBlock(
                 "Intern , Intel Hadoop Distribution", "Jan 2013 - July 2013",
                 """
                 Carried out benchmark on a message queue built on Apache HBase
@@ -116,6 +132,7 @@ object Resume{
               Seq(
                 "Scala",
                 "Java",
+                "Python",
                 "C/C++",
                 "JavaScript",
                 "Shell",
@@ -123,14 +140,17 @@ object Resume{
                 "Haskell"
               ).mkString(" - "),
               Seq(
+                "Spark",
                 "Storm",
                 "Akka",
+                "Beam",
                 "Kafka",
                 "Hadoop",
-                "Cassandra"
+                "Cassandra",
+                "JupyterLab"
               ).mkString(" - "),
               Seq(
-                "Docker",
+                "Docker/Kubernetes",
                 "Ubuntu",
                 "CentOS"
               ).mkString(" - "),
@@ -172,14 +192,21 @@ object Resume{
               titledBlock(
                 "Gearpump",
                 """
-                Gearpump is a real-time Big Data engine on Akka
+                Gearpump is a real-time Big Data engine on Akka.
                 """,
                 autolink("https://github.com/gearpump/gearpump")
               ),
               titledBlock(
+                "Apache Beam",
+                """
+                Beam committer and contributed the Gearpump runner.
+                """,
+                autolink("https://github.com/apache/beam")
+              ),
+              titledBlock(
                 "storm-benchmark",
                 """
-                a suite of benchmarks to test performance of Apache Storm
+                a suite of benchmarks to test performance of Apache Storm.
                 """,
                 autolink("https://github.com/intel-hadoop/storm-benchmark")
               ),
