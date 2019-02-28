@@ -60,7 +60,7 @@ object Resume{
           width := "100%",
             div(
               width := "50%",
-              h1(nameText, "Zhang Tianlun")
+              h1(nameText, "Tianlun(Manu) Zhang")
             ),
             col(
               width := "50%",
@@ -83,16 +83,17 @@ object Resume{
                titledBlock(
                 "Senior Software Engineer, Machine Learning Platform", "Aug 2017 - present",
                 """
-                Developed streaming jobs to prepare real-time data for model training, 
+                Lead the developement of machine learning platform, an online workspace for data engineers and 
+                data scientists to develop machine learning workloads interactively and efficiently. 
+                """,
+                """
+                Built a drag-and-drop editor where newbies can define a machine learning pipeline without 
+                writing any codes and experts can make use of data exploration and visualization tools to get 
+                insights of data and models.
+                """,
+                """
+                Developed stream processing jobs to prepare real-time data for model training, 
                 which improved freshness of trained models.
-                """,
-                """
-                Built a machine learning platform, an online IDE for data engineers and data scientists
-                to develop machine learning workloads interactively and efficiently. 
-                """,
-                """
-                Developed a drag-and-drop editor where newbies can define a machine learning pipeline without 
-                writing any code and experts can make use of data exploration and visualization to get insights of data and models.
                 """
               ),
               row(h2(sectionHeading, "Intel"), logo("Intel.png"), div(rightGreyText, "Shanghai")),
