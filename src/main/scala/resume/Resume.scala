@@ -97,28 +97,30 @@ object Resume{
               row(h2(sectionHeading, "唯品会"), div(rightGreyText, "上海")),
 
               titledBlock(
-                "软件工程师，机器学习平台", "2017年8月至今",
+                "高级软件工程师，机器学习平台", "2017年8月至今",
+                """
+                   领导开发机器学习平台，为数据工程师和数据科学家提供高效的交互式开发环境。
+                """,
+                """
+                   开发基于 Apache Spark 的图形化工具，用户无需编码即可完成机器学习流水线的定义，探查数据分布，检验运行结果。
+                """,
                 """
                    开发基于 Apache Storm 的训练数据准备任务。
-                """,
-
-                """
-                   开发基于 Apache Spark 的图形化机器学习平台，用户可以通过图形拖拽的方式完成机器学习流水线，探查数据分布，检验运行结果。
                 """
               ),
 
               row(h2(sectionHeading, "英特尔"), logo("Intel.png"), div(rightGreyText, "上海")),
 
               titledBlock(
-                "软件工程师，大数据流处理", "2014年7月 - 2017年8月",
+                "高级软件工程师，大数据流处理", "2014年7月 - 2017年8月",
                 """
                    开发基于 Akka 的高性能流处理引擎 Gearpump，实现 Apache Kafka 的连接器，Apache Storm 的透明兼容层，
-                   Exactly-Once 语义，和 Apache Beam 的集成等。Gearpump 已经成为 Apache 基金会孵化项目。
+                   Exactly-Once 语义，和 Apache Beam 的集成等。
                 """,
-                autolink("https://github.com/apache/incubator-gearpump")
+                autolink("https://github.com/gearpump/gearpump")
               ),
               titledBlock(
-                "软件工程师，深度学习平台", "2017年4月 - 2017年8月",
+                "高级软件工程师，深度学习平台", "2017年4月 - 2017年8月",
                 """
                    开发基于 Apache Hadoop YARN 的深度学习平台 TensorFlowOnYARN，帮助用户使用现有大数据设施运行分布式深度学习算法。
                 """
@@ -133,7 +135,7 @@ object Resume{
                 "软件工程师，大数据流处理", "2016年7月 - 2016年8月",
                 """
                    开发 HiBench 的流处理模块，对 Apache Spark Streaming, Apache Storm, Apache Flink 和
-                   Apache Gearpump(incubating) 四个框架进行功能比较和性能测评。
+                   Gearpump 四个框架进行功能比较和性能测评。
                 """,
                 autolink("https://github.com/intel-hadoop/HiBench")
               ),
@@ -178,23 +180,24 @@ object Resume{
                 "Java",
                 "Python",
                 "C/C++",
-                "JavaScript (AngularJS 1)",
-                "Haskell",
+                "JavaScript",
                 "Shell",
-                "SQL"
+                "SQL",
+                "Haskell"
               ).mkString(" - "),
               Seq(
-                "Apache Storm",
-                "Apache Spark",
+                "Spark",
+                "Storm",
                 "Akka",
-                "Apache Beam",
-                "Apache Flink",
-                "Apache Hadoop",
-                "Apache Kafka",
-                "Apache Cassandra"
+                "Beam",
+                "Flink",
+                "Kafka",
+                "Hadoop",
+                "Cassandra",
+                "JupyterLab"
               ).mkString(" - "),
               Seq(
-                "Docker",
+                "Docker/Kubernetes",
                 "Ubuntu",
                 "CentOS"
               ).mkString(" - "),
@@ -228,13 +231,13 @@ object Resume{
           col(
             div(
               row(
-                h2(sectionHeading, "Apache Gearpump (incubating)")),
+                h2(sectionHeading, "Gearpump")),
               titledBlock(
                 "Committer（主要维护者）", "2014年7月至今",
                 """
                    Gearpump 是基于 Akka 的高性能流处理引擎
                 """,
-                autolink("https://github.com/apache/incubator-gearpump")
+                autolink("https://github.com/gearpump/gearpump")
               ),
               paddingBottom := 10
             ),
@@ -256,7 +259,7 @@ object Resume{
               titledBlock(
                 "项目维护者", "2014年12月至今",
                 """
-                   收录了一些有意思的流处理框架，应用和工具，目前有 796 颗星。
+                   收录了一些有意思的流处理框架，应用和工具（超过 1000 星）。
                 """,
                 autolink("https://github.com/manuzhang/awesome-streaming")
               ),
