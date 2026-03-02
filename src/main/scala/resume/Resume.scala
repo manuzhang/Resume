@@ -61,36 +61,64 @@ object Resume{
           section(
             "Work",
             col(
+              row(h2(sectionHeading, "eBay"), div(rightGreyText, "Shanghai")),
+              titledBlock(
+                "MTS 2, Software Engineer, Selling API", "Aug 2025 - Feb 2026",
+                "Led the maintenance of eBay's public Trading API used by thousands of global third-party developers.",
+                """
+                Architected a high-throughput duplicate listing detection process, eliminating critical database "hot spots"
+                and race conditions by implementing a Distributed Lock Manager.
+                """
+              ),
+              titledBlock(
+                "MTS 2, Software Engineer, Cloud Data Platform", "Jun 2019 - Aug 2025",
+                """
+                Led the transition from Hive to Iceberg by developing dedicated migration tooling
+                and a "Lake Manager" to automate table maintenance and cost optimization.
+                """,
+                """
+                Maintained a highly available Spark platform processing PB-level data daily
+                across 10,000+ concurrent production jobs.
+                """,
+                """
+                Built a centralized service for Spark distribution and configuration management,
+                supporting heterogeneous business requirements.
+                """,
+                """
+                Integrated automated performance profiling and version-control tools to
+                streamline Spark upgrades and reduce manual troubleshooting.
+                """
+              ),
               row(h2(sectionHeading, "Vipshop"), div(rightGreyText, "Shanghai")),
-               titledBlock(
-                "Senior Software Engineer, Machine Learning Platform", "Aug 2017 - present",
+              titledBlock(
+                "Senior Software Engineer, Machine Learning Platform", "Aug 2017 - Jun 2019",
                 """
-                Lead the development of machine learning platform, an online workspace for data engineers and
-                data scientists to develop machine learning workloads interactively and efficiently. 
+                Led the architecture and development of an end-to-end Machine Learning Platform,
+                providing an integrated workspace for data scientists and engineers to develop,
+                train, and deploy models.
                 """,
                 """
-                Built a drag-and-drop editor where newbies can define a machine learning pipeline without 
-                writing any codes and experts can make use of data exploration and visualization tools to get 
-                insights of data and models.
+                Built a high-performance drag-and-drop pipeline editor that abstracted complex execution logic,
+                enabling non-technical users to build production-grade ML workflows.
                 """,
                 """
-                Developed stream processing jobs to prepare real-time data for model training, 
-                which improved freshness of trained models.
+                Developed stream processing jobs to prepare real-time data for model training,
+                greatly improving model freshness.
                 """
               ),
               row(h2(sectionHeading, "Intel"), div(rightGreyText, "Shanghai")),
               titledBlock(
                 "Software Engineer, Gearpump", "Jan 2015 - Aug 2017",
                 """
-                Core committer to Gearpump, a real-time Big Data engine on Akka.
-                Developed Kafka connectors, Storm compatibility layer and transaction APIs.
+                Core committer of Gearpump, a real-time Big Data engine on Akka,
+                developing Kafka connectors, Storm compatibility layer and transaction APIs.
                 """
               ),
               titledBlock(
                 "Software Engineer, Intel Hadoop Distribution", "July 2014 - Jan 2015",
                 """
-                Carried out benchmark on Apache Storm and developed storm-benchmark,
-                a suite of benchmarks to test Apache Storm performance.
+                Developed storm-benchmark, a specialized benchmarking suite to profile Apache Storm performance at scale,
+                uncovering architectural bottlenecks.
                 """
               ),
               titledBlock(
@@ -101,9 +129,9 @@ object Resume{
                 """
               ),
               titledBlock(
-                "Intern , Intel Hadoop Distribution", "Jan 2013 - July 2013",
+                "Intern, Intel Hadoop Distribution", "Jan 2013 - July 2013",
                 """
-                Carried out benchmark on a message queue built on Apache HBase
+                Conducted a benchmark on a message queue built on Apache HBase
                 """
               )
             )
@@ -123,14 +151,14 @@ object Resume{
                 "Haskell"
               ).mkString(" - "),
               Seq(
-                "Apache Iceberg",
-                "Apache Spark",
-                "Apache Beam",
+                "Iceberg",
+                "Spark",
+                "Hadoop",
                 "Akka",
-                "Apache Hadoop",
-                "Apache Storm",
-                "Apache Kafka",
-                "Apache Cassandra",
+                "Beam",
+                "Storm",
+                "Kafka",
+                "Cassandra",
                 "JupyterLab"
               ).mkString(" - "),
               Seq(
@@ -162,41 +190,33 @@ object Resume{
           )
         ),
         section(
-          "Reference",
+          "Open Source Contributions",
           col(
             div(
               row(h2(sectionHeading, "Projects")),
-              /* div(listBlock,
-                  p(para,
-                   "Other cool projects i've worked on that are worth checking out!"
-                 )
-               ), */
               titledBlock(
-                "Gearpump",
-                """
-                Gearpump is a real-time Big Data engine on Akka.
-                """,
-                autolink("https://github.com/gearpump/gearpump")
+                "Apache Iceberg (Top 10 contributors by commits)",
+                "",
+                autolink("https://github.com/apache/iceberg")
               ),
               titledBlock(
-                "Apache Beam",
-                """
-                Beam committer and contributed the Gearpump runner.
-                """,
+                "Apache Spark (Long time contributor since 2019)",
+                "",
+                autolink("https://github.com/apache/spark")
+              ),
+              titledBlock(
+                "Apache Beam (committer)",
+                "",
                 autolink("https://github.com/apache/beam")
               ),
               titledBlock(
-                "storm-benchmark",
-                """
-                a suite of benchmarks to test performance of Apache Storm.
-                """,
-                autolink("https://github.com/intel-hadoop/storm-benchmark")
+                "Gearpump (Core developer)",
+                "",
+                autolink("https://github.com/gearpump/gearpump")
               ),
               titledBlock(
-                "awesome-streaming",
-                """
-                a curated list of awesome streaming frameworks, applications, etc.
-                """,
+                "awesome-streaming (over 3k stars)",
+                "",
                 autolink("https://github.com/manuzhang/awesome-streaming")
               )
             )
