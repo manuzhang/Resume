@@ -1,3 +1,5 @@
-libraryDependencies += "com.lihaoyi" %% "scalatags" % "0.5.3"
+scalaVersion := "2.13.12"
 
-libraryDependencies += "com.lihaoyi" %% "ammonite-ops" % "0.4.7"
+libraryDependencies += "com.lihaoyi" %% "scalatags" % "0.13.1"
+
+libraryDependencies += "com.lihaoyi" %% "os-lib" % "0.11.8"

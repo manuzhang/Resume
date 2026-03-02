@@ -1,18 +1,11 @@
 package resume
 
-import ammonite.ops._
 import Styles._
-import Styles.sheet._
 import scalatags.Text.all._
-object Resume{
-  def dataUri(filepath: Path) = {
-    "data:image/png;base64," +
-    javax.xml.bind.DatatypeConverter.printBase64Binary(
-      read.bytes! filepath
-    )
-  }
 
-  def main(args: Array[String]) = {
+object Resume{
+
+  def main(args: Array[String]): Unit = {
 
     def autolink(url: String) = a(url.stripPrefix("https://").stripPrefix("http://"), href:=url)
     def row = div(display.flex, flexDirection := "row")
@@ -28,29 +21,18 @@ object Resume{
       listBlock,
       bullets.map(li(listItem, _))
     )
-    def quickBullet(lhs: String, rhs: String) = tr(
-      td(div(para, roleText, paddingRight := 5, lhs)),
-      td(para, rhs)
-    )
-    def logo(s: String) = {
-      img(height := 15, src := dataUri(cwd/'images/s))
-    }
+
     def section(title: String, body: Frag) = tr(
 
       td(h2(paddingTop := 10, paddingBottom := 10, sectionHeading, title, marginRight := 20)),
       td(paddingTop := 10, paddingBottom := 10, body)
     )
-    def talk(name: String, loc: String, video: String) = div(
-      row(h3(roleText, name), div(rightGreyText, loc)),
-      ul(listBlock, li(listItem, autolink(video)))
-    )
-
 
     val blob = html(
       fontFamily := "Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif",
       head(
         scalatags.Text.tags2.style(raw(cssReset)),
-        scalatags.Text.tags2.style(raw(sheet.styleSheetText))
+        scalatags.Text.tags2.style(raw(styleSheetText))
       ),
       body(
         width := 720,
@@ -68,7 +50,7 @@ object Resume{
               div(
                 textAlign.right,
                 greyText,
-                autolink("http://www.github.com/manuzhang")
+                autolink("https://github.com/manuzhang")
               )
             )
           )
@@ -83,7 +65,7 @@ object Resume{
                titledBlock(
                 "Senior Software Engineer, Machine Learning Platform", "Aug 2017 - present",
                 """
-                Lead the developement of machine learning platform, an online workspace for data engineers and 
+                Lead the development of machine learning platform, an online workspace for data engineers and
                 data scientists to develop machine learning workloads interactively and efficiently. 
                 """,
                 """
@@ -96,7 +78,7 @@ object Resume{
                 which improved freshness of trained models.
                 """
               ),
-              row(h2(sectionHeading, "Intel"), logo("Intel.png"), div(rightGreyText, "Shanghai")),
+              row(h2(sectionHeading, "Intel"), div(rightGreyText, "Shanghai")),
               titledBlock(
                 "Software Engineer, Gearpump", "Jan 2015 - Aug 2017",
                 """
@@ -141,13 +123,14 @@ object Resume{
                 "Haskell"
               ).mkString(" - "),
               Seq(
-                "Spark",
-                "Storm",
+                "Apache Iceberg",
+                "Apache Spark",
+                "Apache Beam",
                 "Akka",
-                "Beam",
-                "Kafka",
-                "Hadoop",
-                "Cassandra",
+                "Apache Hadoop",
+                "Apache Storm",
+                "Apache Kafka",
+                "Apache Cassandra",
                 "JupyterLab"
               ).mkString(" - "),
               Seq(
@@ -170,8 +153,6 @@ object Resume{
             div(
               row(
                 h2(sectionHeading, "East China Normal University"),
-                // Override height to compensate for non-square image
-                logo("ECNU.png")(height := 12, paddingTop := 4),
                 div(rightGreyText, "Shanghai")
               ),
               titledBlock(
@@ -184,12 +165,12 @@ object Resume{
           "Reference",
           col(
             div(
-              row(h2(sectionHeading, "Projects"), logo("Github.png")),
-             /* div(listBlock,
-                 p(para,
-                  "Other cool projects i've worked on that are worth checking out!"
-                )
-              ), */
+              row(h2(sectionHeading, "Projects")),
+              /* div(listBlock,
+                  p(para,
+                   "Other cool projects i've worked on that are worth checking out!"
+                 )
+               ), */
               titledBlock(
                 "Gearpump",
                 """
@@ -223,6 +204,6 @@ object Resume{
         )
       )
     )
-    write.over(cwd/'target/"resume.html", blob.render)
+    os.write.over(os.pwd/Symbol("target")/"resume.html", blob.render)
   }
 }
