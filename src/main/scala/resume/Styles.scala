@@ -66,13 +66,14 @@ object Styles extends StyleSheet {
   def roleText = cls(
     fontSize := 12,
     fontWeight.bold,
-    fontStyle.italic
+    marginRight := 5
   )
 
   def greyText = cls(
     fontSize := 10,
     color := "#888"
   )
+
   def rightGreyText = cls(
     greyText.splice,
     textAlign.right,
@@ -82,12 +83,14 @@ object Styles extends StyleSheet {
   def listBlock = cls(
     marginBottom := 10
   )
+
   def para = cls(
     fontSize := 12,
     textAlign.justify,
     marginTop := 3,
     marginBottom := 3
   )
+
   def listItem = cls(
     para.splice,
     listStyle := "disc"
