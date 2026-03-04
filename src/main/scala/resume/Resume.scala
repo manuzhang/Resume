@@ -74,20 +74,42 @@ object Resume {
           col(
             row(h2(sectionHeading, "eBay"), div(rightGreyText, "上海")),
             titledBlock(
-              "资深（MTS 2）软件工程师, 卖家 API", "2025年8月 - 2026年2月",
-              "负责维护 eBay 公共交易 API（Trading API），该接口服务于全球数千名第三方开发者",
-              "主导重构商品重复上架检测机制，通过分布式锁消除并发问题和关键数据库的热点问题"
-            ),
-            titledBlock(
-              "资深（MTS 2）软件工程师, 大数据平台", "2019年6月 - 2025年8月",
+              "资深（MTS 2）软件工程师, 大数据平台", "2019年6月 - 2026年2月",
               subListBlock("主导基于 Apache Iceberg 的下一代数据湖建设",
-                "研发定制化迁移方案，实现大规模 Spark/Hive 表向 Iceberg 表的无缝平滑迁移",
-                "开发数据湖管理器，实现了 Iceberg 表维护、性能调优及存储成本优化的全面自动化",
+                """
+                   负责 Iceberg 在生产环境的落地与规模化推广，基于社区版本针对内部场景和需求进行定制，推动 Iceberg 与 Spark 版本演进的兼容性与生产验证；
+                   修复实践中发现的问题，反馈给社区并参与新功能的开发和讨论
+                """,
+                """
+                   研发定制化迁移方案，在零数据拷贝和不影响业务的前提下，实现 300+ Spark/Hive 表向 Iceberg 表的无缝平滑迁移，满足 GDPR 等合规性要求
+                """,
+                """
+                   开发数据湖优化器，通过监听 Iceberg commit 事件自动触发 compaction 任务合并小文件，降低元数据开销与读放大，提升查询稳定性与性能，节省集群资源
+                """,
+                """
+                   设计基于 Iceberg 的 CDC 数据入湖方案，解决流式更新下查询性能下降的问题，满足准实时数据分析需求
+                """
               ),
-              subListBlock("负责 PB 级高可用 Spark 平台运维，支撑每日 10,000+ 生产作业稳定运行",
-                "排查生产任务的运行故障，优化任务性能，节省集群资源",
-                "构建集中化的 Spark 发行版和配置管理服务，支持不同业务场景需求",
-                "集成自动化测试、性能剖析和版本控制工具，实现 Spark 大版本的自动化升级"),
+              subListBlock("开发维护高可用的 Spark 平台，支撑 PB 级数据处理和分析需求",
+                """
+                   基于社区版本根据内部需求对 Spark 进行定制化改造和升级，排查并解决生产任务运行故障，输出标准化排障流程与性能优化建议
+                """,
+                """
+                   持续演进作业监控与诊断平台：解析 Spark EventLog，提取任务运行与诊断信息并写入 ElasticSearch，
+                   支撑查询与诊断服务，提升故障定位与自助排障效率
+                """,
+                """
+                   主导 Spark AQE 在生产平台稳定性落地并规模化迁移，重点治理数据倾斜场景以降低人工介入；
+                   同时参与并贡献 Spark 社区相关修复与验证，推动其大规模生产可用
+                """,
+                """
+                   建设并演进中心化 Spark 配置服务：支持不同集群多个版本与配置变更的灰度发布与回滚，以及不同业务场景在统一平台下的差异化需求
+                """,
+                """
+                   基于中心化配置服务和诊断平台打造自动化 Spark 大版本升级流程，实现 10000+ 任务从 2.4 到 3.1 再到 3.5 的平滑升级；
+                   修复升级过程中发现的问题，并反馈给社区
+                """
+               ),
             ),
             row(h2(sectionHeading, "唯品会"), div(rightGreyText, "上海")),
             titledBlock(
@@ -99,16 +121,15 @@ object Resume {
             row(h2(sectionHeading, "英特尔"), div(rightGreyText, "上海")),
             titledBlock(
               "软件工程师，Gearpump 项目", "2015年1月 - 2017年8月",
-              "Gearpump（基于 Akka 的实时大数据引擎）核心开发者，负责开发 Kafka 连接器、Storm 兼容层及事务 API"
+              """
+                 研发基于 Akka 的新一代实时大数据引擎 Gearpump，负责开发 Kafka 连接器、Storm 兼容层及事务 API，集成到 Apache Beam，
+                 并将项目贡献给 Apache 基金会
+              """
             ),
             titledBlock(
               "软件工程师，英特尔 Hadoop 发行版", "2013年7月 - 2015年1月",
               "开发 storm-benchmark，一套专门用于大规模分析 Apache Storm 性能的基准测试套件，发现关键架构瓶颈",
               "参与贡献 mapreduce-nativetask 项目，该项目将 MapReduce 性能提升了 30% 并被并入 Hadoop 主分支"
-            ),
-            titledBlock(
-              "实习生，英特尔 Hadoop 发行版", "2013年1月 - 2013年7月",
-              "针对基于 Apache HBase 构建的消息队列进行了基准测试"
             )
           )
         ),
@@ -123,7 +144,7 @@ object Resume {
                 autolink("https://github.com/apache/iceberg")
               ),
               titledBlock(
-                "Apache Spark（自 2019 年起长期贡献者）",
+                "Apache Spark（长期积极贡献者）",
                 "",
                 autolink("https://github.com/apache/spark")
               ),
