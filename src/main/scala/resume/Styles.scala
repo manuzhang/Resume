@@ -81,7 +81,7 @@ object Styles extends StyleSheet {
   )
 
   def listBlock = cls(
-    marginBottom := 10
+    marginBottom := 15
   )
 
   def para = cls(
@@ -93,13 +93,23 @@ object Styles extends StyleSheet {
 
   def listItem = cls(
     para.splice,
-    listStyle := "disc"
+    listStyle := "disc",
+    marginBottom := 10,
+    marginTop := 10
+  )
+
+
+  def subListItem = cls(
+    listStyle := "circle",
+    marginLeft := 10,
+    marginBottom := 5,
+    marginTop := 5
   )
 
   def sectionHeading = cls(
     color := "#008",
     marginBottom := 5,
-    marginRight := 5
+    marginRight := 30
   )
 }
 

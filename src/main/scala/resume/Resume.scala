@@ -21,6 +21,11 @@ object Resume {
       bulletList(bullets: _*)
     )
 
+    def subListBlock(title: String, bullets: Frag*) = div(
+      h4(roleText, title),
+      ul(bullets.map(li(subListItem, _)))
+    )
+
     def bulletList(bullets: Frag*) = ul(
       listBlock,
       bullets.map(li(listItem, _))
@@ -28,7 +33,7 @@ object Resume {
 
     def section(title: String, body: Frag) = tr(
 
-      td(h2(paddingTop := 10, paddingBottom := 10, sectionHeading, title, marginRight := 20)),
+      td(h2(paddingTop := 10, paddingBottom := 10, sectionHeading, title)),
       td(paddingTop := 10, paddingBottom := 10, body)
     )
 
@@ -67,31 +72,46 @@ object Resume {
           col(
             row(h2(sectionHeading, "eBay"), div(rightGreyText, "Shanghai")),
             titledBlock(
-              "MTS 2, Software Engineer, Selling API", "Aug 2025 - Feb 2026",
-              "Led the maintenance of eBay's public Trading API used by thousands of global third-party developers.",
-              """
-                Architected a high-throughput duplicate listing detection process, eliminating critical database "hot spots"
-                and race conditions by implementing a Distributed Lock Manager.
+              "MTS 2 Software Engineer, Cloud Data Platform", "Jun 2019 - Feb 2026",
+              subListBlock("Led the construction of the next-generation lakehouse based on Apache Iceberg",
                 """
-            ),
-            titledBlock(
-              "MTS 2, Software Engineer, Cloud Data Platform", "Jun 2019 - Aug 2025",
-              """
-                Led the transition from Hive to Iceberg by developing dedicated migration tooling
-                and a "Lake Manager" to automate table maintenance and cost optimization.
+                   Scaled Apache Iceberg in production by developing internal customizations, managing Spark-Iceberg integration,
+                   and contributing bug fixes and features back to the community.
                 """,
-              """
-                Maintained a highly available Spark platform processing PB-level data daily
-                across 10,000+ concurrent production jobs.
-                """,
-              """
-                Built a centralized service for Spark distribution and configuration management,
-                supporting diverse business requirements.
-                """,
-              """
-                Integrated automated performance profiling and version-control tools to
-                streamline Spark upgrades and reduce manual troubleshooting.
                 """
+                   Developed a customized migration solution to achieve seamless and smooth migration of 300+ Spark/Hive tables to Iceberg tables
+                   without copying data or affecting business, meeting GDPR and other compliance requirements
+                """,
+                """
+                   Developed a Data Lake Optimizer by watching Iceberg commit events, triggering compaction jobs on demand to merge small files,
+                   reducing metadata overhead and read amplification, improving query stability and performance, and saving cluster resources.
+                """,
+                """
+                   Designed a CDC data ingestion solution based on Iceberg to solve the problem of declining query performance under streaming updates,
+                   meeting near real-time data analysis needs.
+                """
+              ),
+              subListBlock("Developed and maintained a high-availability Spark platform, supporting PB-level data processing and analysis requirements",
+                """
+                   Managed the full lifecycle of internal Spark distributions, including custom feature backporting, proactive performance tuning,
+                   and the development of standardized production troubleshooting frameworks.
+                """,
+                """
+                   Continuously evolved the job monitoring and diagnosis platform: analyzing Spark EventLogs to extract task execution and diagnostic information,
+                   and persisting into ElasticSearch to support query and diagnostic services, improving self-service troubleshooting efficiency.
+                """,
+                """
+                   Led the large-scale enabling of Spark AQE on the production platform, handling data skew scenarios without manual intervention;
+                   meanwhile reported critical issues and contributed bug fixes back to Spark community.
+                """,
+                """
+                   Built a centralized Spark configuration service: supporting canary release and rollback of multiple versions and configuration changes across multiple clusters,
+                   satisfying diverse business requirements under a unified platform.
+                """,
+                """
+                   Developed an automated Spark major version upgrade pipeline based on the centralized configuration service and diagnostic platform,
+                   achieving a smooth upgrade of 10,000+ jobs from 2.4 to 3.1 and then to 3.5; fixed issues found during the upgrade process and contributed back to the community.
+                """),
             ),
             row(h2(sectionHeading, "Vipshop"), div(rightGreyText, "Shanghai")),
             titledBlock(
@@ -114,29 +134,21 @@ object Resume {
             titledBlock(
               "Software Engineer, Gearpump", "Jan 2015 - Aug 2017",
               """
-                Core committer of Gearpump, a real-time Big Data engine on Akka,
-                developing Kafka connectors, Storm compatibility layer and transaction APIs.
-                """
+                 Developed Gearpump, a next-generation real-time big data engine based on Akka;
+                 responsible for developing Kafka connectors, Storm compatibility layers, and transaction APIs and integrating with Apache Beam;
+                 contributed the project to the Apache Foundation.
+              """
             ),
             titledBlock(
-              "Software Engineer, Intel Hadoop Distribution", "July 2014 - Jan 2015",
+              "Software Engineer, Intel Hadoop Distribution", "July 2013 - Jan 2015",
               """
-                Developed storm-benchmark, a specialized benchmarking suite to profile Apache Storm performance at scale,
-                uncovering architectural bottlenecks.
-                """
-            ),
-            titledBlock(
-              "Software Engineer, Intel Hadoop Distribution", "July 2013 - July 2014",
+                 Developed storm-benchmark, a specialized benchmarking suite to profile Apache Storm performance at scale,
+                 uncovering architectural bottlenecks.
+              """,
               """
-                Contributed to mapreduce-nativetask, which boosted MapReduce performance up to 30%,
-                and was merged into Hadoop trunk.
-                """
-            ),
-            titledBlock(
-              "Intern, Intel Hadoop Distribution", "Jan 2013 - July 2013",
+                 Contributed to mapreduce-nativetask, which boosted MapReduce performance up to 30%,
+                 and was merged into Hadoop trunk.
               """
-                Conducted a benchmark on a message queue built on Apache HBase
-                """
             )
           )
         ),
@@ -151,7 +163,7 @@ object Resume {
                 autolink("https://github.com/apache/iceberg")
               ),
               titledBlock(
-                "Apache Spark (Long time contributor since 2019)",
+                "Apache Spark (Long time active contributor)",
                 "",
                 autolink("https://github.com/apache/spark")
               ),
@@ -197,8 +209,7 @@ object Resume {
                 "Beam",
                 "Storm",
                 "Kafka",
-                "Cassandra",
-                "JupyterLab"
+                "Cassandra"
               ).mkString(",")
             ),
             row(h3(roleText, "Tools:"),
@@ -208,6 +219,7 @@ object Resume {
                 "CentOS",
                 "Git",
                 "Intellij",
+                "Jupyter/JupyterLab",
                 "Vim",
                 "Emacs"
               ).mkString(",")
