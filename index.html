@@ -54,8 +54,8 @@ table {
 
 .resume-Styles-roleText{
   font-size: 12px;
-  font-style: italic;
   font-weight: bold;
+  margin-right: 5px;
 }
 
 .resume-Styles-greyText{
@@ -71,7 +71,7 @@ table {
 }
 
 .resume-Styles-listBlock{
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .resume-Styles-para{
@@ -84,32 +84,51 @@ table {
 .resume-Styles-listItem{
   font-size: 12px;
   list-style: disc;
-  margin-bottom: 3px;
-  margin-top: 3px;
+  margin-bottom: 10px;
+  margin-top: 10px;
   text-align: justify;
+}
+
+.resume-Styles-subListItem{
+  list-style: circle;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  margin-top: 5px;
 }
 
 .resume-Styles-sectionHeading{
   color: #008;
   margin-bottom: 5px;
-  margin-right: 5px;
+  margin-right: 30px;
 }
-</style></head><body style="width: 720px; box-sizing: border-box; padding: 30px;"><div style="display: flex; flex-direction: row; width: 100%;"><div style="width: 50%;"><h1 class="resume-Styles-nameText">Tianlun(Manu) Zhang</h1></div><div style="display: flex; flex-direction: column; width: 50%;"><div style="text-align: right;" class="resume-Styles-greyText">owenzhang1990@gmail.com</div><div style="text-align: right;" class="resume-Styles-greyText"><a href="https://github.com/manuzhang">github.com/manuzhang</a></div></div></div></body><hr /><table style="width: 100%;"><tr><td><h2 style="padding-top: 10px; padding-bottom: 10px; margin-right: 20px;" class="resume-Styles-sectionHeading">Work</h2></td><td style="padding-top: 10px; padding-bottom: 10px;"><div style="display: flex; flex-direction: column;"><div style="display: flex; flex-direction: row;"><h2 class="resume-Styles-sectionHeading">eBay</h2><div class="resume-Styles-rightGreyText">Shanghai</div></div><div><div style="display: flex; flex-direction: row;"><h3 class="resume-Styles-roleText">MTS 2, Software Engineer, Selling API</h3><div class="resume-Styles-rightGreyText">Aug 2025 - Feb 2026</div></div><ul class="resume-Styles-listBlock"><li class="resume-Styles-listItem">Led the maintenance of eBay's public Trading API used by thousands of global third-party developers.</li><li class="resume-Styles-listItem">
-                Architected a high-throughput duplicate listing detection process, eliminating critical database &quot;hot spots&quot;
-                and race conditions by implementing a Distributed Lock Manager.
-                </li></ul></div><div><div style="display: flex; flex-direction: row;"><h3 class="resume-Styles-roleText">MTS 2, Software Engineer, Cloud Data Platform</h3><div class="resume-Styles-rightGreyText">Jun 2019 - Aug 2025</div></div><ul class="resume-Styles-listBlock"><li class="resume-Styles-listItem">
-                Led the transition from Hive to Iceberg by developing dedicated migration tooling
-                and a &quot;Lake Manager&quot; to automate table maintenance and cost optimization.
-                </li><li class="resume-Styles-listItem">
-                Maintained a highly available Spark platform processing PB-level data daily
-                across 10,000+ concurrent production jobs.
-                </li><li class="resume-Styles-listItem">
-                Built a centralized service for Spark distribution and configuration management,
-                supporting heterogeneous business requirements.
-                </li><li class="resume-Styles-listItem">
-                Integrated automated performance profiling and version-control tools to
-                streamline Spark upgrades and reduce manual troubleshooting.
-                </li></ul></div><div style="display: flex; flex-direction: row;"><h2 class="resume-Styles-sectionHeading">Vipshop</h2><div class="resume-Styles-rightGreyText">Shanghai</div></div><div><div style="display: flex; flex-direction: row;"><h3 class="resume-Styles-roleText">Senior Software Engineer, Machine Learning Platform</h3><div class="resume-Styles-rightGreyText">Aug 2017 - Jun 2019</div></div><ul class="resume-Styles-listBlock"><li class="resume-Styles-listItem">
+</style></head><body style="width: 720px; box-sizing: border-box; padding: 30px;"><div style="display: flex; flex-direction: row; width: 100%;"><div style="width: 50%;"><h1 class="resume-Styles-nameText">Tianlun(Manu) Zhang</h1></div><div style="display: flex; flex-direction: column; width: 50%;"><div style="text-align: right;" class="resume-Styles-greyText">owenzhang1990@gmail.com</div><div style="text-align: right;" class="resume-Styles-greyText"><a href="https://github.com/manuzhang">github.com/manuzhang</a></div></div></div></body><hr /><table style="width: 100%;"><tr><td><h2 style="padding-top: 10px; padding-bottom: 10px;" class="resume-Styles-sectionHeading">Work</h2></td><td style="padding-top: 10px; padding-bottom: 10px;"><div style="display: flex; flex-direction: column;"><div style="display: flex; flex-direction: row;"><h2 class="resume-Styles-sectionHeading">eBay</h2><div class="resume-Styles-rightGreyText">Shanghai</div></div><div><div style="display: flex; flex-direction: row;"><h3 class="resume-Styles-roleText">MTS 2 Software Engineer, Cloud Data Platform</h3><div class="resume-Styles-rightGreyText">Jun 2019 - Feb 2026</div></div><ul class="resume-Styles-listBlock"><li class="resume-Styles-listItem"><div><h4 class="resume-Styles-roleText">Led the construction of the next-generation lakehouse based on Apache Iceberg</h4><ul><li class="resume-Styles-subListItem">
+                   Scaled Apache Iceberg in production by developing internal customizations, managing Spark-Iceberg integration,
+                   and contributing bug fixes and features back to the community.
+                </li><li class="resume-Styles-subListItem">
+                   Developed a customized migration solution to achieve seamless and smooth migration of 300+ Spark/Hive tables to Iceberg tables
+                   without copying data or affecting business, meeting GDPR and other compliance requirements
+                </li><li class="resume-Styles-subListItem">
+                   Developed a Data Lake Optimizer by watching Iceberg commit events, triggering compaction jobs on demand to merge small files,
+                   reducing metadata overhead and read amplification, improving query stability and performance, and saving cluster resources.
+                </li><li class="resume-Styles-subListItem">
+                   Designed a CDC data ingestion solution based on Iceberg to solve the problem of declining query performance under streaming updates,
+                   meeting near real-time data analysis needs.
+                </li></ul></div></li><li class="resume-Styles-listItem"><div><h4 class="resume-Styles-roleText">Developed and maintained a high-availability Spark platform, supporting PB-level data processing and analysis requirements</h4><ul><li class="resume-Styles-subListItem">
+                   Managed the full lifecycle of internal Spark distributions, including custom feature backporting, proactive performance tuning,
+                   and the development of standardized production troubleshooting frameworks.
+                </li><li class="resume-Styles-subListItem">
+                   Continuously evolved the job monitoring and diagnosis platform: analyzing Spark EventLogs to extract task execution and diagnostic information,
+                   and persisting into ElasticSearch to support query and diagnostic services, improving self-service troubleshooting efficiency.
+                </li><li class="resume-Styles-subListItem">
+                   Led the large-scale enabling of Spark AQE on the production platform, handling data skew scenarios without manual intervention;
+                   meanwhile reported critical issues and contributed bug fixes back to Spark community.
+                </li><li class="resume-Styles-subListItem">
+                   Built a centralized Spark configuration service: supporting canary release and rollback of multiple versions and configuration changes across multiple clusters,
+                   satisfying diverse business requirements under a unified platform.
+                </li><li class="resume-Styles-subListItem">
+                   Developed an automated Spark major version upgrade pipeline based on the centralized configuration service and diagnostic platform,
+                   achieving a smooth upgrade of 10,000+ jobs from 2.4 to 3.1 and then to 3.5; fixed issues found during the upgrade process and contributed back to the community.
+                </li></ul></div></li></ul></div><div style="display: flex; flex-direction: row;"><h2 class="resume-Styles-sectionHeading">Vipshop</h2><div class="resume-Styles-rightGreyText">Shanghai</div></div><div><div style="display: flex; flex-direction: row;"><h3 class="resume-Styles-roleText">Senior Software Engineer, Machine Learning Platform</h3><div class="resume-Styles-rightGreyText">Aug 2017 - Jun 2019</div></div><ul class="resume-Styles-listBlock"><li class="resume-Styles-listItem">
                 Led the architecture and development of an end-to-end Machine Learning Platform,
                 providing an integrated workspace for data scientists and engineers to develop,
                 train, and deploy models.
@@ -120,14 +139,13 @@ table {
                 Developed stream processing jobs to prepare real-time data for model training,
                 greatly improving model freshness.
                 </li></ul></div><div style="display: flex; flex-direction: row;"><h2 class="resume-Styles-sectionHeading">Intel</h2><div class="resume-Styles-rightGreyText">Shanghai</div></div><div><div style="display: flex; flex-direction: row;"><h3 class="resume-Styles-roleText">Software Engineer, Gearpump</h3><div class="resume-Styles-rightGreyText">Jan 2015 - Aug 2017</div></div><ul class="resume-Styles-listBlock"><li class="resume-Styles-listItem">
-                Core committer of Gearpump, a real-time Big Data engine on Akka,
-                developing Kafka connectors, Storm compatibility layer and transaction APIs.
-                </li></ul></div><div><div style="display: flex; flex-direction: row;"><h3 class="resume-Styles-roleText">Software Engineer, Intel Hadoop Distribution</h3><div class="resume-Styles-rightGreyText">July 2014 - Jan 2015</div></div><ul class="resume-Styles-listBlock"><li class="resume-Styles-listItem">
-                Developed storm-benchmark, a specialized benchmarking suite to profile Apache Storm performance at scale,
-                uncovering architectural bottlenecks.
-                </li></ul></div><div><div style="display: flex; flex-direction: row;"><h3 class="resume-Styles-roleText">Software Engineer, Intel Hadoop Distribution</h3><div class="resume-Styles-rightGreyText">July 2013 - July 2014</div></div><ul class="resume-Styles-listBlock"><li class="resume-Styles-listItem">
-                Contributed to mapreduce-nativetask, which boosted MapReduce performance up to 30%,
-                and was merged into Hadoop trunk.
-                </li></ul></div><div><div style="display: flex; flex-direction: row;"><h3 class="resume-Styles-roleText">Intern, Intel Hadoop Distribution</h3><div class="resume-Styles-rightGreyText">Jan 2013 - July 2013</div></div><ul class="resume-Styles-listBlock"><li class="resume-Styles-listItem">
-                Conducted a benchmark on a message queue built on Apache HBase
-                </li></ul></div></div></td></tr><tr><td><h2 style="padding-top: 10px; padding-bottom: 10px; margin-right: 20px;" class="resume-Styles-sectionHeading">Skills</h2></td><td style="padding-top: 10px; padding-bottom: 10px;"><h3 class="resume-Styles-roleText"><ul class="resume-Styles-listBlock"><li class="resume-Styles-listItem">Scala - Java - Python - C/C++ - JavaScript - Shell - SQL - Haskell</li><li class="resume-Styles-listItem">Iceberg - Spark - Hadoop - Akka - Beam - Storm - Kafka - Cassandra - JupyterLab</li><li class="resume-Styles-listItem">Docker/Kubernetes - Ubuntu - CentOS</li><li class="resume-Styles-listItem">Git - Intellij - Vim - Emacs</li></ul></h3></td></tr><tr><td><h2 style="padding-top: 10px; padding-bottom: 10px; margin-right: 20px;" class="resume-Styles-sectionHeading">Education</h2></td><td style="padding-top: 10px; padding-bottom: 10px;"><div style="display: flex; flex-direction: column;"><div><div style="display: flex; flex-direction: row;"><h2 class="resume-Styles-sectionHeading">East China Normal University</h2><div class="resume-Styles-rightGreyText">Shanghai</div></div><div><div style="display: flex; flex-direction: row;"><h3 class="resume-Styles-roleText">Undergraduate Software Engineering</h3><div class="resume-Styles-rightGreyText">Sep 2009 - July 2013</div></div><ul class="resume-Styles-listBlock"></ul></div></div></div></td></tr><tr><td><h2 style="padding-top: 10px; padding-bottom: 10px; margin-right: 20px;" class="resume-Styles-sectionHeading">Open Source Contributions</h2></td><td style="padding-top: 10px; padding-bottom: 10px;"><div style="display: flex; flex-direction: column;"><div><div style="display: flex; flex-direction: row;"><h2 class="resume-Styles-sectionHeading">Projects</h2></div><div><div style="display: flex; flex-direction: row;"><h3 class="resume-Styles-roleText">Apache Iceberg (Top 10 contributors by commits)</h3><div class="resume-Styles-rightGreyText"></div></div><ul class="resume-Styles-listBlock"><li class="resume-Styles-listItem"><a href="https://github.com/apache/iceberg">github.com/apache/iceberg</a></li></ul></div><div><div style="display: flex; flex-direction: row;"><h3 class="resume-Styles-roleText">Apache Spark (Long time contributor since 2019)</h3><div class="resume-Styles-rightGreyText"></div></div><ul class="resume-Styles-listBlock"><li class="resume-Styles-listItem"><a href="https://github.com/apache/spark">github.com/apache/spark</a></li></ul></div><div><div style="display: flex; flex-direction: row;"><h3 class="resume-Styles-roleText">Apache Beam (committer)</h3><div class="resume-Styles-rightGreyText"></div></div><ul class="resume-Styles-listBlock"><li class="resume-Styles-listItem"><a href="https://github.com/apache/beam">github.com/apache/beam</a></li></ul></div><div><div style="display: flex; flex-direction: row;"><h3 class="resume-Styles-roleText">Gearpump (Core developer)</h3><div class="resume-Styles-rightGreyText"></div></div><ul class="resume-Styles-listBlock"><li class="resume-Styles-listItem"><a href="https://github.com/gearpump/gearpump">github.com/gearpump/gearpump</a></li></ul></div><div><div style="display: flex; flex-direction: row;"><h3 class="resume-Styles-roleText">awesome-streaming (over 3k stars)</h3><div class="resume-Styles-rightGreyText"></div></div><ul class="resume-Styles-listBlock"><li class="resume-Styles-listItem"><a href="https://github.com/manuzhang/awesome-streaming">github.com/manuzhang/awesome-streaming</a></li></ul></div></div></div></td></tr></table></html>
+                 Developed Gearpump, a next-generation real-time big data engine based on Akka;
+                 responsible for developing Kafka connectors, Storm compatibility layers, and transaction APIs and integrating with Apache Beam;
+                 contributed the project to the Apache Foundation.
+              </li></ul></div><div><div style="display: flex; flex-direction: row;"><h3 class="resume-Styles-roleText">Software Engineer, Intel Hadoop Distribution</h3><div class="resume-Styles-rightGreyText">July 2013 - Jan 2015</div></div><ul class="resume-Styles-listBlock"><li class="resume-Styles-listItem">
+                 Developed storm-benchmark, a specialized benchmarking suite to profile Apache Storm performance at scale,
+                 uncovering architectural bottlenecks.
+              </li><li class="resume-Styles-listItem">
+                 Contributed to mapreduce-nativetask, which boosted MapReduce performance up to 30%,
+                 and was merged into Hadoop trunk.
+              </li></ul></div></div></td></tr><tr><td><h2 style="padding-top: 10px; padding-bottom: 10px;" class="resume-Styles-sectionHeading">Open Source Contributions</h2></td><td style="padding-top: 10px; padding-bottom: 10px;"><div style="display: flex; flex-direction: column;"><div><div style="display: flex; flex-direction: row;"><h2 class="resume-Styles-sectionHeading">Projects</h2></div><div><div style="display: flex; flex-direction: row;"><h3 class="resume-Styles-roleText">Apache Iceberg (Top 10 contributors by commits)</h3><div class="resume-Styles-rightGreyText"></div></div><ul class="resume-Styles-listBlock"><li class="resume-Styles-listItem"><a href="https://github.com/apache/iceberg">github.com/apache/iceberg</a></li></ul></div><div><div style="display: flex; flex-direction: row;"><h3 class="resume-Styles-roleText">Apache Spark (Long time active contributor)</h3><div class="resume-Styles-rightGreyText"></div></div><ul class="resume-Styles-listBlock"><li class="resume-Styles-listItem"><a href="https://github.com/apache/spark">github.com/apache/spark</a></li></ul></div><div><div style="display: flex; flex-direction: row;"><h3 class="resume-Styles-roleText">Apache Beam (committer)</h3><div class="resume-Styles-rightGreyText"></div></div><ul class="resume-Styles-listBlock"><li class="resume-Styles-listItem"><a href="https://github.com/apache/beam">github.com/apache/beam</a></li></ul></div><div><div style="display: flex; flex-direction: row;"><h3 class="resume-Styles-roleText">Gearpump (Core developer)</h3><div class="resume-Styles-rightGreyText"></div></div><ul class="resume-Styles-listBlock"><li class="resume-Styles-listItem"><a href="https://github.com/gearpump/gearpump">github.com/gearpump/gearpump</a></li></ul></div><div><div style="display: flex; flex-direction: row;"><h3 class="resume-Styles-roleText">awesome-streaming (over 3k stars)</h3><div class="resume-Styles-rightGreyText"></div></div><ul class="resume-Styles-listBlock"><li class="resume-Styles-listItem"><a href="https://github.com/manuzhang/awesome-streaming">github.com/manuzhang/awesome-streaming</a></li></ul></div></div></div></td></tr><tr><td><h2 style="padding-top: 10px; padding-bottom: 10px;" class="resume-Styles-sectionHeading">Skills</h2></td><td style="padding-top: 10px; padding-bottom: 10px;"><ul class="resume-Styles-listBlock"><li class="resume-Styles-listItem"><div style="display: flex; flex-direction: row;"><h3 class="resume-Styles-roleText">Programming Languages:</h3>Scala,Java,Python,SQL,Shell,C/C++,JavaScript,Haskell</div></li><li class="resume-Styles-listItem"><div style="display: flex; flex-direction: row;"><h3 class="resume-Styles-roleText">Distributed Frameworks:</h3>Iceberg,Spark,Hadoop,Akka,Beam,Storm,Kafka,Cassandra</div></li><li class="resume-Styles-listItem"><div style="display: flex; flex-direction: row;"><h3 class="resume-Styles-roleText">Tools:</h3>Docker/Kubernetes,Ubuntu,CentOS,Git,Intellij,Jupyter/JupyterLab,Vim,Emacs</div></li></ul></td></tr><tr><td><h2 style="padding-top: 10px; padding-bottom: 10px;" class="resume-Styles-sectionHeading">Education</h2></td><td style="padding-top: 10px; padding-bottom: 10px;"><div style="display: flex; flex-direction: column;"><div><div style="display: flex; flex-direction: row;"><h2 class="resume-Styles-sectionHeading">East China Normal University</h2><div class="resume-Styles-rightGreyText">Shanghai</div></div><div><div style="display: flex; flex-direction: row;"><h3 class="resume-Styles-roleText">Undergraduate Software Engineering</h3><div class="resume-Styles-rightGreyText">Sep 2009 - July 2013</div></div><ul class="resume-Styles-listBlock"></ul></div></div></div></td></tr></table></html>
